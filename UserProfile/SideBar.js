@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Text,View 
+  Text,View, StyleSheet
 } from 'react-native';
 
 
@@ -19,37 +19,59 @@ export default class Sidebar extends Component {
 
         </Header>
         <Content>
-        	<Text> Venkatesh Manohar</Text>
+        	<Text style={styles.Username}> Venkatesh Manohar</Text>
         	<Text> @Venkatesh_Manohar</Text>
-        	<View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
-        		<Text >690 Following</Text>
-        		<Text>653 Followers </Text>
+        	<View style={{flex: 1, flexDirection: 'row'}}>
+        		<Text style={styles.boldFont}>690 </Text> 
+            <Text>Following </Text>
+        		<Text style={styles.boldFont}> 653 </Text> 
+            <Text>Followers </Text>
         	</View>
         </Content>
         <Content>
            <List>
             <ListItem >
-            	<Icon ios='ios-person-outline' android='md-person' />
-              <Text> Profile</Text>
+              <Left>
+                <Icon ios='ios-person-outline' android='md-person' />
+              </Left>
+              <Body>
+                <Text style={styles.listItemFont}> Profile</Text>
+              </Body>
+              <Right/>
             </ListItem>
             <ListItem>
-            <Icon ios='ios-list-box-outline' android='md-list-box' />
-              <Text> Lists</Text>
+              <Left>
+                <Icon ios='ios-list-box-outline' android='md-list-box' />
+              </Left>
+              <Body>
+                <Text style={styles.listItemFont}> Lists</Text>
+              </Body>
+              <Right/>
             </ListItem>
            	<ListItem>
-           	 <Icon name='flash' />
-              <Text> Moments</Text>
+           	  <Left>
+                <Icon name='flash' />
+              </Left>
+              <Body>
+                <Text style={styles.listItemFont}> Moments</Text>
+              </Body>
+              <Right/>
             </ListItem>
             <ListItem>
-            	 <Icon ios="ios-photos" android='md-photos'/>
-              <Text> Highlights</Text>
+            	<Left>
+                <Icon ios="ios-photos" android='md-photos'/>
+              </Left>
+              <Body>
+                <Text style={styles.listItemFont}> Highlights</Text>
+              </Body>
+              <Right/>
             </ListItem>
             <Separator/>
              <ListItem>
-              <Text>Settings and Privacy</Text>
+              <Text style={styles.listItemFont}>Settings and Privacy</Text>
             </ListItem>
             <ListItem>
-              <Text>Help Centre</Text>
+              <Text style={styles.listItemFont}>Help Centre</Text>
             </ListItem>
           </List>
         </Content>
@@ -67,5 +89,21 @@ export default class Sidebar extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  Username: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 24,
+  },
+  boldFont: {
+    color: 'black',
+    fontWeight: 'bold'
+  },
+  listItemFont: {
+    color: 'black',
+    fontSize: 18,
+  }
+});
 
 module.exports = Sidebar;

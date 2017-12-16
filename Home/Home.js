@@ -1,7 +1,9 @@
 import React, {Component}  from 'react';
 
-import { Container, Header, Title, Card, Segment, CardItem, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Thumbnail, View,Fab } from 'native-base';
+import { Container, Header, Title, Card, Segment, CardItem, Content, Button, Left, Right, Body, Icon, Text, Thumbnail, View,Fab } from 'native-base';
 import TimeLineCards from '../Card/timelineCards';
+import Tabs from './Tabs';
+import FooterContent from './Footer';
 
 export default class Home extends Component{
   constructor() {
@@ -13,10 +15,10 @@ export default class Home extends Component{
   render() {
     return (
       <Container>
-        <Header>
+        <Header style={{backgroundColor: 'white'}}>
           <Left>
-          <Button  onPress={()=>this.props.openDrawer()}>
-          <Icon ios='ios-person' android='md-person' />
+          <Button rounded  onPress={()=>this.props.navigation.navigate('DrawerOpen')}>
+          <Thumbnail source={require('../assets/dp.png')} />
           </Button>
           </Left>
 
@@ -25,17 +27,17 @@ export default class Home extends Component{
           </Body>
           <Right />
         </Header>
-        <Segment>
+        <Segment >
           <Button first >
             <Icon ios='ios-home' android='md-home' />
           </Button>
-          <Button >
+          <Button onPress={() =>  this.props.navigation.navigate('Search')}>
             <Icon ios='ios-search' android='md-search' />
           </Button>
-          <Button >
+          <Button onPress={() =>  this.props.navigation.navigate('Notification')}>
             <Icon ios='ios-notifications' android='md-notifications' />
           </Button>
-          <Button last>
+          <Button  onPress={() =>  this.props.navigation.navigate('Mail')}>
             <Icon ios='ios-mail' android='md-mail' />
           </Button>
         </Segment>
@@ -52,7 +54,7 @@ export default class Home extends Component{
             active={this.state.active}
             direction="up"
             containerStyle={{ }}
-            style={{ backgroundColor: '#5067FF' }}
+            style={{ backgroundColor: 'blue', marginBottom: 30 }}
             position="bottomRight"
             onPress={() => this.setState({ active: !this.state.active })}>
             <Icon name="share" />
@@ -67,14 +69,7 @@ export default class Home extends Component{
             </Button>
           </Fab>
         
-        <Footer style={{backgroundColor: 'white'}}>
-          <FooterTab style={{backgroundColor: 'white'}}>
-              
-              <Button vertical><Text> All </Text></Button>
-              <Button vertical><Text> Mentions </Text></Button>
-                
-          </FooterTab>
-        </Footer>
+          <FooterContent/>
       </Container>
     );
   }

@@ -28,17 +28,17 @@ export default class TimeLineCards extends Component {
               </Body>
             </CardItem>
             <CardItem>
-              <Button small iconLeft transparent>
+              <Button small  transparent>
                  <Icon name="text" />
                  <Text >60</Text>
                </Button>
 
-             <Button small iconLeft transparent>
+             <Button small  transparent>
                 <Icon name="git-compare" />
                 <Text  >2</Text>
               </Button>
 
-               <Button small iconLeft transparent>
+               <Button small  transparent>
                  <Icon name="heart" />
                  <Text >19</Text>
                </Button>
