@@ -11,7 +11,7 @@ This is a simple Twitter app created as part of Hasura Product Development Fello
 4. Uses ionicons as built in in native base
 5. Uses Stack Navigation to navigate to search, notifications and mail screen
 6. Uses custom Sidebar component used by DrawerNavigator to show the UI of Drawer as required
-6. Organization of structure basically done keeping reusability in mind
+7. Organization of structure basically done keeping reusability in mind
 
 Steps to set up development environment 
     --Follow the steps as mentioned in "Getting Started" section of react-native website in the 
